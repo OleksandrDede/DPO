@@ -1,0 +1,38 @@
+﻿@using DataLayer;
+
+
+@{
+    ViewData["Title"] = "Seznam mých směn";
+}
+<h2>Seznam mých směn</h2>
+
+
+<table class="table table-bordered table-responsive table-hover">
+    <tr>
+        <th>ID smeny</th>
+        <th>Datum </th>
+        <th>Linka </th>
+        <th>ID řidiče</th>
+        <th>ID vozidla</th>
+    </tr>
+
+    @foreach (var item in (List<Shift>)ViewData["ShiftList"])
+    {
+
+        <tr>
+            <th>@item.ShiftID</th>
+            <td> @item.Date</td>
+            <td>@item.Line</td>
+            <td>@item.DriverID</td>
+            <td> @item.VehicleID</td>
+
+        </tr>
+
+    }
+    
+</table>
+
+<b>Tento měsíc vydělám: @ViewBag.Salary Kč</b>
+
+
+

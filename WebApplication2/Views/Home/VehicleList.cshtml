@@ -1,0 +1,75 @@
+﻿@using DataLayer;
+
+@{
+    ViewData["Title"] = "Seznam vozidel";
+}
+<h2>Seznam vozidel</h2>
+<form>
+    Evidenční číslo:<br>
+    <input type="number" name="vehicleid"><br>
+    Rok výroby:<br>
+    <input type="number" name="productionyear"><br>
+    Depo:<br>
+    <select name="depot">
+        <option value="Poruba">Poruba</option>
+        <option value="Hranecnik">Hranecnik</option>
+        <option value="Kriva">Kriva</option>
+        <option value="Trolejbusy">Trolejbusy</option>
+    </select><br>
+    Stav:<br>
+
+    <select name="condition">
+        <option value="provozni">provozni</option>
+        <option value="voprave">v oprave</option>
+        <option value="vyrazen">vyrazen</option>
+        <option value="historicky">historicky</option>
+    </select><br>
+    Model vozidla: <br>
+    <select name="vehiclemodelid">
+        <option value="1">Tatra T3</option>
+        <option value="2">Tatra KT8D5.RN1</option>
+        <option value="3">Tatra T6A5</option>
+        <option value="4">Škoda Astra</option>
+        <option value="5">Inekon Trio</option>
+        <option value="6">Tatra T3R.EV</option>
+        <option value="7">Vario LFR</option>
+        <option value="8">Vario VV60LF</option>
+        <option value="9">Vario LF3</option>
+        <option value="10">Vario LF2</option>
+        <option value="11">Vario LF3/2</option>
+        <option value="12">Vario LF2 Plus </option>
+        <option value="13">Stadler NF2 nOVA</option>
+
+    </select><br>
+
+    <input type="button" value="Přidat nové vozidlo" onclick="AddNewVehicle(vehicleid, productionyear, depot, condition, vehiclemodelid)" />
+</form>
+<br>
+<table class="table table-bordered table-responsive table-hover">
+    <tr>
+        <th>Evidenční číslo </th>
+        <th>Rok výroby </th>
+        <th>Depo</th>
+        <th>Stav</th>
+        <th>Model vozidla</th>
+
+    </tr>
+
+    @foreach (var item in (List<Vehicle>)ViewData["VehicleList"])
+    {
+
+    <tr>
+        <th>@item.VehicleID</th>
+        <td> @item.ProductionYear</td>
+        <td>@item.Depot</td>
+        <td>@item.Condition</td>
+        <td>@item.VehicleModelID</td>
+
+
+    </tr>
+
+    }
+</table>
+
+
+

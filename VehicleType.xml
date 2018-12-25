@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<VehicleType>
+  <Tractions>
+    <Traction>
+      <vehicletypeid>1</vehicletypeid>
+      <traction>Autobus</traction>
+    </Traction>
+    <Traction>
+      <vehicletypeid>2</vehicletypeid>
+      <traction>Tramvaj</traction>
+    </Traction>
+    <Traction>
+      <vehicletypeid>3</vehicletypeid>
+      <traction>Trolejbus</traction>
+    </Traction>
+    <Traction>
+      <vehicletypeid>4</vehicletypeid>
+      <traction>Parciální trolejbus</traction>
+    </Traction>
+  </Tractions>
+</VehicleType>
